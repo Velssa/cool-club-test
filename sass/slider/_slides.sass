@@ -1,0 +1,124 @@
+$speed: 0.5s
+
+.orange
+    background: $orange
+
+.green-dark
+    background: $green-dark
+
+.green-light
+    background: $green-light
+
+.green-shadow
+    background: $green-shadow
+
+.bg-dotts
+    background: url('../img/ellipse.svg')
+    opacity: 0.2
+    transition: $speed
+
+.bg-line-vert
+    background: url('../img/line_vert.svg')
+    opacity: 0.2
+    transition: $speed
+.bg-line-hor
+    background: url('../img/line_hor.svg')
+    opacity: 0.2
+    transition: $speed
+
+.slide
+    cursor: pointer
+    position: relative
+    width: 352px
+    height: 352px
+    margin-bottom: 32px
+    border-radius: 8px
+    &__bg
+        width: 100%
+        height: 100%
+        position: relative
+        z-index: 100
+        border-radius: 8px
+        &-wrap
+            width: 100%
+            height: 100%
+    &__text
+        position: absolute
+        bottom: 0
+        z-index: 999999
+        padding: 35px
+        color: $text
+        font-size: 20px
+        line-height: 32px
+        +open-sans
+    &__back-shaddow
+        position: absolute
+        width: 80%
+        height: 100%
+        z-index: 10
+        left: 10%
+        bottom: -10px
+        opacity: 0.3
+        filter: blur(15px)
+        border-radius: 8px
+        transition: $speed
+    &__front-shaddow
+        position: absolute
+        bottom: 0
+        height: 176px
+        width: 100%
+        z-index: 200
+        background: linear-gradient(360deg, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0) 100%)
+        border-radius: 0px 0px 8px 8px
+    &:hover
+        & .bg-dotts
+            opacity: 0.4
+            transition: $speed
+        & .bg-line-vert
+            background: url('../img/line_hor.svg')
+            transition: $speed
+        & .bg-line-hor
+            background: url('../img/line_vert.svg')
+            transition: $speed
+        & .slide__back-shaddow
+            opacity: 0.8
+            transition: $speed
+
+.slider-nav
+    display: flex
+    align-items: center
+    margin-top: -42px
+    &__arrow
+        margin: 0 60px
+        width: 48px
+        height: 48px
+        border: 2px solid #009688
+        border-radius: 50%
+        display: flex
+        justify-content: center
+        align-items: center
+        color: #009688
+        font-size: 20px
+        cursor: pointer
+        opacity: 0.25
+        +open-sans
+        &:hover
+            opacity: 1
+    &__dots
+        & .slick-dots
+            position: relative
+            bottom: 0
+            display: flex
+            & li
+                width: 16px
+                height: 16px
+                &.slick-active button:before
+                    font-size: 10px
+                    margin-top: 1px
+                & button:before
+                    display: flex
+                    width: 100%
+                    height: 100%
+                    align-items: center
+                    color: #009688
+                    font-size: 6px
